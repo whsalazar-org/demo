@@ -5,22 +5,17 @@ on:
       config-path:
         required: true
         type: string
-      secrets:
+    secrets:
         envPAT:
         required: true
 jobs:
   reusable_workflow_job:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     environment: production
     steps:
     - uses: actions/labeler@v4
       with:
-      repo-token: ${{ secrets.envPAT }}
-      configuration-path: ${{ inputs.config-path }}
-  
-  jobs:
-  call-workflow-passing-data:
-    uses: whsalazar-org/demo/.github/workflows/calledreusabledemo.yml@main
-    with:
-      config-path: .github/labeler.yml
-    secrets: inherit
+        repo-token: ${{ secrets.envPAT }}
+        configuration-path: ${{ inputs.config-path }}
+
+
