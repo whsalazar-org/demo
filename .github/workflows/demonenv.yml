@@ -13,5 +13,10 @@ jobs:
       name: Staging
       url: https://github.com
     steps:
-    - name: deploy
-      run: echo "{{steps}}"
+    - name: dump step context
+      run: echo '${{ toJSON(steps) }}'
+
+
+
+
+
