@@ -17,9 +17,10 @@ jobs:
         id: github_context_step
         run: echo '${{ toJSON(github) }}'
       - name: Dump job context
+        id: job_context_step
         run: echo '${{ toJSON(job) }}'
       - name: dump step context
-        id: testing-step
+        id: step_context_step
         run: echo '${{ toJSON(steps) }}'
         
         
