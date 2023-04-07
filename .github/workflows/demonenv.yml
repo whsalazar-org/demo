@@ -19,8 +19,10 @@ jobs:
       - name: Dump job context
         id: job_context_step
         run: echo '${{ toJSON(job) }}'
-      - name: dump step context
-        id: step_context_step
+      - name: dump step context     
+        run: echo '${{ toJSON(steps) }}'        
+      - name: dump step context2
+        id: step_context_step2
         run: echo '${{ toJSON(steps) }}'
         
         
